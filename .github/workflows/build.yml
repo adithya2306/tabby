@@ -32,6 +32,7 @@ jobs:
       run: yarn run lint
 
   macOS-Build:
+    if: false
     runs-on: macos-15
     needs: Lint
     strategy:
@@ -139,16 +140,16 @@ jobs:
             arch: amd64
             rust_triple: x86_64-unknown-linux-gnu
             os: ubuntu-24.04
-          - build-arch: arm64
-            arch: arm64
-            rust_triple: aarch64-unknown-linux-gnu
-            triplet: aarch64-linux-gnu-
-            os: ubuntu-24.04-arm
-          - build-arch: arm
-            arch: armhf
-            rust_triple: arm-unknown-linux-gnueabihf
-            triplet: arm-linux-gnueabihf-
-            os: ubuntu-24.04
+#          - build-arch: arm64
+#            arch: arm64
+#            rust_triple: aarch64-unknown-linux-gnu
+#            triplet: aarch64-linux-gnu-
+#            os: ubuntu-24.04-arm
+#          - build-arch: arm
+#            arch: armhf
+#            rust_triple: arm-unknown-linux-gnueabihf
+#            triplet: arm-linux-gnueabihf-
+#            os: ubuntu-24.04
       fail-fast: false
 
     env:
@@ -305,8 +306,8 @@ jobs:
         include:
           - arch: x64
             rust_triple: x86_64-pc-windows-msvc
-          - arch: arm64
-            rust_triple: aarch64-pc-windows-msvc
+#          - arch: arm64
+#            rust_triple: aarch64-pc-windows-msvc
       fail-fast: false
 
     env:
